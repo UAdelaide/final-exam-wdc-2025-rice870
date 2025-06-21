@@ -58,7 +58,7 @@
       },
       setup() {
         async function generateDogImages() {
-          for (let i=0; i<Object(this.dogInfo))
+          for (let i=0; i<Object.keys(this.dogInfo).length; i++)
         }
         async function getDogList() {
           try{
