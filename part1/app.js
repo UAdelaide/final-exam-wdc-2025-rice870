@@ -130,7 +130,7 @@ app.get('/api/walkrequests/open', async (req, res) => {
 
       WHERE WalkRequests.status = 'open'
       `);
-    res.json(books);
+    res.json(walkreq);
   } catch (err) {
     res.status(500).json({ error: 'Failed to fetch books' });
   }
