@@ -82,6 +82,8 @@ router.post('/logout', async (req, res) => {
   res.redirect('/index.html');
 });
 
-router.get('/doglist')
+router.get('/doglist', async (req, res) => {
+  const user_id = req.session.user
+})
 
 module.exports = router;
