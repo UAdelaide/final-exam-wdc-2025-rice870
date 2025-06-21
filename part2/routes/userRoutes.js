@@ -79,7 +79,7 @@ router.post('/logout', async (req, res) => {
     }
   })
   res.clearCookie;
-  res.redirect('login')
+  res.redirect('/index.html');
 });
 
 module.exports = router;
