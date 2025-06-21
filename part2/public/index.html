@@ -60,9 +60,9 @@
         async function generateDogImages() {
           this.dogImages = [];
           for (let i=0; i<Object.keys(this.dogInfo).length; i++){
-            const response = fetch('https://dog.ceo/api/breeds/image/random')
-            const dog
-            this.dogImages.push()
+            const response = await fetch('https://dog.ceo/api/breeds/image/random')
+            const dogImg = await response.json();
+            this.dogImages.push(dogImg.message);
           }
         }
         async function getDogList() {
