@@ -42,7 +42,7 @@
           <td> {{ dog.dog_id }} </td>
           <td> {{ dog.name }} </td>
           <td> {{ dog.owner_id }} </td>
-          <td> <img :src="dogImages[index]" alt="dog" style="height: 100px"> </td>
+          <!-- <td> <img :src="dogImages[index]" alt="dog" style="height: 100px"> </td> -->
         </tr>
       </tbody>
     </table>
@@ -60,7 +60,7 @@
         async function generateDogImages() {
           this.dogImages = [];
           for (let i=0; i<Object.keys(this.dogInfo).length; i++){
-            const response = await fetch('https://dog.ceo/api/breeds/image/random')
+            const response = await fetch('https://dog.ceo/api/breeds/image/random');
             const dogImg = await response.json();
             this.dogImages.push(dogImg.message);
           }
