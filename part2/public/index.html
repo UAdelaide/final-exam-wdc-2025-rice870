@@ -40,7 +40,9 @@
       methods: {
         async handleLogin() {
           try {
-            const responce = fetch('/users/login', )
+            const responce = fetch('/users/login', {
+              method: 'POST',
+            })
           }
         }
       }
