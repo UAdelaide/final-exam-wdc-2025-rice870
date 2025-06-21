@@ -75,9 +75,10 @@
             }
 
             const dogInfo = await response.json();
-            this.dogInfo = dogInfo;
 
             generateDogImages();
+
+            return dogInfo;
           } catch (err) {
             console.error(err);
           }
