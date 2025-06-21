@@ -72,7 +72,8 @@
               return null;
             }
 
-            const dogInfo = await response.json();
+            const info = await response.json();
+            dogInfo.value = info;
 
             generateDogImages();
 
