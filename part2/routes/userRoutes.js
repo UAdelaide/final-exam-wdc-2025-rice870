@@ -84,9 +84,10 @@ router.post('/logout', async (req, res) => {
 
 router.get('/doglist', async (req, res) => {
   if (!req.session.user.id){
-    res.send(401).json({})
+    res.send(401).json({error: "User not logged in"})
   }
   const user_id = req.session.user.id;
+  
 
 })
 
