@@ -143,7 +143,8 @@ app.get('/api/walkers/summary', async (req, res) => {
       COUNT(WalkRatings.rating_id) AS total_ratings,
       AVG(WalkRatings.rating) AS average_rating,
       COUNT(DISTINCT WalkRequests.request_id) AS completed_walks,
-      
+      From Users
+      LEFT JOIN WalkRequests
       `);
     res.json(books);
   } catch (err) {
