@@ -74,7 +74,7 @@
               return null;
             }
 
-            const dogInfo = response.json();
+            const dogInfo = await response.json();
             this.dogInfo = dogInfo;
 
             generateDogImages();
