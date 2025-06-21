@@ -84,7 +84,7 @@ router.post('/logout', async (req, res) => {
 
 router.get('/doglist', async (req, res) => {
   if (!req.session.user.id){
-    re
+    res.send(401).json({})
   }
   const user_id = req.session.user.id;
 
