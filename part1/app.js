@@ -116,7 +116,7 @@ app.get('/api/dogs', async (req, res) => {
 
 app.get('/api/walkrequests/open', async (req, res) => {
   try {
-    const [dogs] = await db.execute(`SELECT
+    const [walkreq] = await db.execute(`SELECT
       WalkRequests.request_id,
       Dogs.name AS dog_name,
       WalkRequests.requested_time,
@@ -136,21 +136,10 @@ app.get('/api/walkrequests/open', async (req, res) => {
   }
 });
 
-app.get('/api/walkers/open', async (req, res) => {
+app.get('/api/walkers/summary', async (req, res) => {
   try {
     const [dogs] = await db.execute(`SELECT
-      WalkRequests.request_id,
-      Dogs.name AS dog_name,
-      WalkRequests.requested_time,
-      WalkRequests.duration_minutes,
-      WalkRequests.location,
-      Users.username AS owner_username
 
-      FROM WalkRequests
-      JOIN Dogs on Dogs.dog_id = WalkRequests.dog_id
-      JOIN Users on Users.user_id = Dogs.owner_id
-
-      WHERE WalkRequests.status = 'open'
       `);
     res.json(books);
   } catch (err) {
