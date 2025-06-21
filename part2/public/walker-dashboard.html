@@ -60,8 +60,8 @@
         }
 
         async function getCurrentUser(){
-          const user = await fetch('/api/users/me')
-          return
+          const user = await fetch('/api/users/me');
+          return user.id;
         }
 
         async function applyToWalk(requestId) {
