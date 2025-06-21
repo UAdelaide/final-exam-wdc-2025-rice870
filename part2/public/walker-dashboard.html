@@ -70,7 +70,8 @@
             const user = response.json();
             return user.id;
           } catch (err) {
-            console.error()
+            console.error('Failed to fetch current user.');
+            return null;
           }
         }
 
