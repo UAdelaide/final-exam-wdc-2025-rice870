@@ -83,7 +83,6 @@ router.post('/logout', async (req, res) => {
 });
 
 router.get('/doglist', async (req, res) => {
-
   try{
     if (!req.session.user.id){
       res.send(401).json({error: "User not logged in"})
@@ -94,8 +93,6 @@ router.get('/doglist', async (req, res) => {
   } catch (err) {
     res.status(500).json({error: "Failed dog fetch!"})
   }
-
-
-})
+});
 
 module.exports = router;
