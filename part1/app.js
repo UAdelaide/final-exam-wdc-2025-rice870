@@ -119,7 +119,7 @@ app.get('/api/walkrequests/open', async (req, res) => {
     const [dogs] = await db.execute(`SELECT
       WalkRequests.request_id,
 
-      JOIN 
+      JOIN Dogs on Dogs.
       `);
     res.json(books);
   } catch (err) {
