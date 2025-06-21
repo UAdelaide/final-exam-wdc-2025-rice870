@@ -124,9 +124,12 @@
         async function getDogs() {
           try{
             const doglist = await fetch('/api/users/doglist');
+            if (!doglist.ok){
+              
+            }
             this.dogs = await doglist.json();
           } catch (err) {
-            
+            console.err(err);
           }
 
         }
