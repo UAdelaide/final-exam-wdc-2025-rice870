@@ -124,10 +124,10 @@ app.get('/api/walkrequests/open', async (req, res) => {
       WalkRequests.location,
       Users.username AS owner_username
 
-      WHERE W
-
       JOIN Dogs on Dogs.dog_id = WalkRequests.dog_id
       JOIN Users on Users.user_id = Dogs.owner_id
+
+      WHERE WalkRequests.status = 'open'
       `);
     res.json(books);
   } catch (err) {
