@@ -57,7 +57,7 @@
         const dogImages = ref([]);
         async function generateDogImages() {
           this.dogImages = [];
-          for (let i=0; i<Object.keys(this.dogInfo).length; i++){
+          for (let i=0; i<dogInfo.value.length; i++){
             const response = await fetch('https://dog.ceo/api/breeds/image/random');
             const dogImg = await response.json();
             dogImages.value.push(dogImg.message);
