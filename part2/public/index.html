@@ -42,9 +42,12 @@
         async function getDogList() {
           try{
             const response = await fetch('/api/dogs');
+            if (!response.ok)
 
             const dogInfo = response.json();
             this.dogInfo = dogInfo;
+          } catch (err) {
+            console.error(err);
           }
         }
 
