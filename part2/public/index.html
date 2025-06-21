@@ -51,13 +51,8 @@
   <script>
     const { createApp, onMounted } = Vue;
     createApp({
-      data() {
-        return {
-          message: 'Welcome to the Dog Walking Service!'
-        };
-      },
       setup() {
-        
+        const message = ref('Welcome ')
         async function generateDogImages() {
           this.dogImages = [];
           for (let i=0; i<Object.keys(this.dogInfo).length; i++){
