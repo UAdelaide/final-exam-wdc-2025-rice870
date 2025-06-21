@@ -82,4 +82,6 @@ router.post('/logout', async (req, res) => {
   res.redirect('/index.html');
 });
 
+router.get('/doglist')
+
 module.exports = router;
