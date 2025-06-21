@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const db = require('../models/db');
+const { request } = require('../app');
 
 
 // GET all users (for admin/testing)
@@ -56,7 +57,7 @@ router.post('/login', async (req, res) => {
     user = rows[0]
 
     // user's session has id, name, role
-    res.session.user = {
+    req.session.user = {
       id: user.user_id,
       username: user.username,
       role: user.role
