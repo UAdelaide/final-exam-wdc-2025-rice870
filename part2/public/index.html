@@ -41,7 +41,10 @@
       setup() {
         async function getDogList() {
           try{
-            const response = await fetch(/api)
+            const response = await fetch('/api/dogs');
+
+            const dogs = response.json();
+            
           }
         }
 
