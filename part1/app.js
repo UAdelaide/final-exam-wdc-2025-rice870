@@ -145,7 +145,9 @@ app.get('/api/walkers/summary', async (req, res) => {
       COUNT(DISTINCT WalkRequests.request_id) AS completed_walks,
       From Users
       LEFT JOIN WalkRequests ON WalkRequests.status = 'completed' AND EXISTS (
-        SELECT 1 FROM WalkApplications WHERE WalkApplications.request_id = WalkRequests.request_id)
+        SELECT 1 FROM WalkApplications WHERE
+        WalkApplications.request_id = WalkRequests.request_id
+        AND WalkApplications.Users.user_id)
       `);
     res.json(books);
   } catch (err) {
