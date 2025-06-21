@@ -140,7 +140,7 @@ app.get('/api/walkers/summary', async (req, res) => {
   try {
     const [dogs] = await db.execute(`SELECT
       Users.username AS walker_username,
-      
+      COUNT(WalkRatings.rating_id) AS total
       `);
     res.json(books);
   } catch (err) {
