@@ -124,6 +124,7 @@ app.get('/api/walkrequests/open', async (req, res) => {
       WalkRequests.location,
       Users.username AS owner_username
 
+      FROM WalkRequests
       JOIN Dogs on Dogs.dog_id = WalkRequests.dog_id
       JOIN Users on Users.user_id = Dogs.owner_id
 
