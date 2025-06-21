@@ -118,6 +118,8 @@ app.get('/api/walkrequests/open', async (req, res) => {
   try {
     const [dogs] = await db.execute(`SELECT
       WalkRequests.request_id,
+
+      JOIN 
       `);
     res.json(books);
   } catch (err) {
