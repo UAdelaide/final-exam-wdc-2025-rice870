@@ -43,8 +43,8 @@
           try{
             const response = await fetch('/api/dogs');
 
-            const dogs = response.json();
-            
+            const dogInfo = response.json();
+            this.dogInfo = dogInfo;
           }
         }
 
