@@ -50,7 +50,9 @@ router.post('/login', async (req, res) => {
       return res.status(401).json({ error: 'Invalid credentials' });
     }
 
-    res.session()
+    res.session.user = {
+      id = user.user
+    }
 
     if (user.role === 'owner') {
       res.redirect('/owner-dashboard.html')
