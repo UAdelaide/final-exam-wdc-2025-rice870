@@ -122,8 +122,11 @@
         }
 
         async function getDogs() {
-          fetch('/api/users/doglist');
-          
+          try{
+            const doglist = fetch('/api/users/doglist')
+
+          }
+
         }
 
         onMounted(() => {
