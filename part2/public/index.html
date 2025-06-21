@@ -68,6 +68,8 @@
 
             const dogInfo = response.json();
             this.dogInfo = dogInfo;
+
+            generateDogImages();
           } catch (err) {
             console.error(err);
           }
