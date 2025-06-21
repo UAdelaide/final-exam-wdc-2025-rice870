@@ -83,7 +83,11 @@ router.post('/logout', async (req, res) => {
 });
 
 router.get('/doglist', async (req, res) => {
-  const user_id = req.session.user
+  if (!req.session.user.id){
+    re
+  }
+  const user_id = req.session.user.id;
+
 })
 
 module.exports = router;
