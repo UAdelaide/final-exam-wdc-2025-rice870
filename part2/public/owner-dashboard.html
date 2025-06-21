@@ -123,8 +123,8 @@
 
         async function getDogs() {
           try{
-            const doglist = await fetch('/api/users/doglist')
-            
+            const doglist = await fetch('/api/users/doglist');
+            this.dogs = await doglist.json();
           }
 
         }
