@@ -22,7 +22,7 @@
             <label class="form-label">Dog</label>
             <select v-model="form.dog" class="form-select" required>
               <option disabled value="">Select dog</option>
-              <!-- adds all dog names, but should return dog (eg if we choose )-->
+              <!-- adds all dog names, but should return dog (eg if we choose Buffy, then id 3 should get passed in post)-->
               <option v-for="dog in dogs" :key="dog.dog_name" :value="dog.dog_id"></option>
             </select>
           </div>
