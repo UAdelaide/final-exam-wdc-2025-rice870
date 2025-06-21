@@ -149,7 +149,7 @@ app.get('/api/walkers/summary', async (req, res) => {
         WalkApplications.request_id = WalkRequests.request_id
         AND WalkApplications.walker_id = Users.user_id
         AND WalkApplications.status = 'accepted')
-      LEFT JOIN WalkRatings 
+      LEFT JOIN WalkRatings ON WalkRatings.request_id 
       `);
     res.json(books);
   } catch (err) {
