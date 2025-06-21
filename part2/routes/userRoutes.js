@@ -85,14 +85,16 @@ router.post('/logout', async (req, res) => {
 router.get('/doglist', async (req, res) => {
 
   try{
+    if (!req.session.user.id){
+      res.send(401).json({error: "User not logged in"})
+    }
+    const user_id = req.session.user.id;
+    const [dogs] = db.run(`SELECT name FROM Dogs WHERE owner_id = ?`, [user_id]);
+    res.json(dogs);
+  } catch (err) {
     
   }
-  if (!req.session.user.id){
-    res.send(401).json({error: "User not logged in"})
-  }
-  const user_id = req.session.user.id;
-  const [dogs] = db.run(`SELECT name FROM Dogs WHERE owner_id = ?`, [user_id]);
-  res.json(dogs);
+
 
 })
 
