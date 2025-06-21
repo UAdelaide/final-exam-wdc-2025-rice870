@@ -3,12 +3,7 @@ const path = require('path');
 require('dotenv').config();
 const session = require('express-session')
 
-app.use(session({
-    secret: 'secretpassword',
-    resave: false,
-    saveUninitialized: false,
-    cookie: { secure: false }
-}));
+
 
 const app = express();
 
