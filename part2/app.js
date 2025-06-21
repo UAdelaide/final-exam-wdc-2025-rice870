@@ -1,7 +1,7 @@
 const express = require('express');
 const path = require('path');
 require('dotenv').config();
-const session = requre('express-session')
+const session = require('express-session')
 
 app.use(session({
     secret: 'secretpassword',
