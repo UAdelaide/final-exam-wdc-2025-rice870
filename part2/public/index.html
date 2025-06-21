@@ -39,8 +39,10 @@
         };
       },
       setup() {
+        async
+
         onMounted(() => {
-          
+          getDogList();
         })
       }
     }).mount('#app');
