@@ -120,6 +120,7 @@ app.get('/api/walkrequests/open', async (req, res) => {
       WalkRequests.request_id,
 
       JOIN Dogs on Dogs.dog_id = WalkRequests.dog_id
+      JOIN Users on Users.user_id = Dogs.
       `);
     res.json(books);
   } catch (err) {
