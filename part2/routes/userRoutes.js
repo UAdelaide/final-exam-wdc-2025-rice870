@@ -87,7 +87,8 @@ router.get('/doglist', async (req, res) => {
     res.send(401).json({error: "User not logged in"})
   }
   const user_id = req.session.user.id;
-  const [dogs] = db.run(`SELECT name FROM Dogs WHERE owner`)
+  const [dogs] = db.run(`SELECT name FROM Dogs WHERE owner_id = ?`, [user_id]);
+  res.json(dogs)
 
 })
 
