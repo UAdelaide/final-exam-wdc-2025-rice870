@@ -65,12 +65,12 @@
             if (!response.ok){
               const message = await response.json();
               console.error(message.error);
-              
+              return null
             }
             const user = response.json();
             return user.id;
           } catch (err) {
-
+            console.error()
           }
         }
 
