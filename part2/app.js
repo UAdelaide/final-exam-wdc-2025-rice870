@@ -8,6 +8,12 @@ const session = require('express-session')
 const app = express();
 
 // Middleware
+app.use(session({
+    secret: 'secretpassword',
+    resave: false,
+    saveUninitialized: false,
+    cookie: { secure: false }
+}));
 app.use(express.json());
 app.use(express.static(path.join(__dirname, '/public')));
 
