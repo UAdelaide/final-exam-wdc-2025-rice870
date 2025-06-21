@@ -138,7 +138,7 @@ app.get('/api/walkrequests/open', async (req, res) => {
 
 app.get('/api/walkers/summary', async (req, res) => {
   try {
-    const [dogs] = await db.execute(`SELECT
+    const [walkers] = await db.execute(`SELECT
       Users.username AS walker_username,
       COUNT(WalkRatings.rating_id) AS total_ratings,
       AVG(WalkRatings.rating) AS average_rating,
@@ -151,9 +151,9 @@ app.get('/api/walkers/summary', async (req, res) => {
         AND WalkApplications.status = 'accepted')
       LEFT JOIN WalkRatings ON WalkRatings.request_id = WalkRequests.request_id AND WalkRatings.walker_id = Users.user_id
       WHERE Users.role = 'walker'
-      
+      GROUP BY Users.user_id, Users.username
       `);
-    res.json(books);
+    res.json(walkers);
   } catch (err) {
     res.status(500).json({ error: 'Failed to fetch books' });
   }
