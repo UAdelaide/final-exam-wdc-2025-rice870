@@ -33,6 +33,11 @@
       </div>
     </div>
     <p v-else>No available walk requests at the moment.</p>
+
+    <!-- user logout -->
+    <form id="logOut" action="/api/users/logout" method="post">
+      <button type="submit" class="btn btn-danger">Logout</button>
+    </form>
   </div>
 
   <script>
