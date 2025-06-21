@@ -38,11 +38,11 @@
         </tr>
       </thead>
       <tbody>
-        <tr v-for="dog in dogInfo">
+        <tr v-for="(dog, index) in dogInfo">
           <td> {{ dog.dog_id }} </td>
           <td> {{ dog.name }} </td>
           <td> {{ dog.owner_id }} </td>
-          <td> </td>
+          <td> <img :src=""> </td>
         </tr>
       </tbody>
     </table>
