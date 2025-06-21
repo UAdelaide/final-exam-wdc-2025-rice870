@@ -92,7 +92,7 @@ router.get('/doglist', async (req, res) => {
     const [dogs] = db.run(`SELECT name FROM Dogs WHERE owner_id = ?`, [user_id]);
     res.json(dogs);
   } catch (err) {
-    
+    res.status(500).json({error: "Failed dog fetch!"})
   }
 
 
