@@ -7,8 +7,8 @@ app.use(session({
     secret: 'secretpassword',
     resave: false,
     saveUninitialized: false,
-    
-}))
+    cookie: { secure: false }
+}));
 
 const app = express();
 
