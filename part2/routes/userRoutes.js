@@ -75,9 +75,11 @@ router.post('/logout', async (req, res) => {
   // default handling in case session never began
   req.session.destroy(err => {
     if (err) {
-      return res.status(500).send()
+      return res.status(500).send('logout FAIL');
     }
   })
+  res.clearCookie;
+  res.redirect('login')
 });
 
 module.exports = router;
