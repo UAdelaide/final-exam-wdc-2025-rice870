@@ -147,7 +147,8 @@ app.get('/api/walkers/summary', async (req, res) => {
       LEFT JOIN WalkRequests ON WalkRequests.status = 'completed' AND EXISTS (
         SELECT 1 FROM WalkApplications WHERE
         WalkApplications.request_id = WalkRequests.request_id
-        AND WalkApplications.Users.user_id)
+        AND WalkApplications.walker_id = Users.user_id
+        AND WalkApplications.status = 'accepted')
       `);
     res.json(books);
   } catch (err) {
