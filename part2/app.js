@@ -6,6 +6,7 @@ const session = requre('express-session')
 app.use(session({
     secret: 'secretpassword',
     resave: false,
+    saveUninitialized: false,
     
 }))
 
